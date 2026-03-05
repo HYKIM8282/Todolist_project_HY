@@ -1,0 +1,29 @@
+Python 가상환경
+venv/
+.env/
+.venv/
+
+python cache
+pycache/
+*.pyc
+*.pyo
+*.pyd
+
+환경 변수
+.env
+
+database
+db.sqlite3
+*.sqlite3
+
+로그
+*.log
+*.out
+*.err
+
+IDE
+.vscode/
+.idea/
+
+OS
+.DS_Store

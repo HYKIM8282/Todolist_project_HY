@@ -1,0 +1,14 @@
+.pyc
+.pyo
+.pyd
+.env
+.sqlite3
+.pyc
+.py
+.log
+.out
+.err
+.vscode
+.idea
+.sublime
+.override.yml

@@ -27,3 +27,4 @@ IDE
 
 OS
 .DS_Store
+.ruff_cache/

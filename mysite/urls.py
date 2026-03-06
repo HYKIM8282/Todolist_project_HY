@@ -15,9 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+# Django 기본 관리자 페이지 기능 불러오기
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.shortcuts import redirect
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("todo/", include("todo.urls")),
+    path("", lambda request: redirect("todo:list")),  # 첫페이지가 무조건 보이게하기
 ]

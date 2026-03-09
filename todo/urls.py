@@ -16,7 +16,8 @@ app_name = "todo"
 # | `name="list"` | 이 URL의 별명 |
 
 urlpatterns = [
-    path("list/", views.todo_list, name="list"),  # 첫 테스트용
+    # path("list/", views.todo_list, name="list"),  # 첫 테스트용
+    path("list/", views.TodoListView.as_view(), name="list"),  # 실제 작동용 list
 ]
 
 ### 전체 흐름

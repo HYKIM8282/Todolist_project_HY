@@ -1,6 +1,8 @@
 # Django에서 데이터베이스 모델을 만들기 위한 도구를 불러옴
 from django.db import models
 
+exclude = ["created_at", "updated_at"]
+
 
 # 데이터베이스 테이블 하나 = Todo 클래스 하나
 # 각 필드(컬럼) 설명
@@ -16,12 +18,8 @@ class Todo(models.Model):
     completed_at = models.DateTimeField(
         null=True, blank=True
     )  # 완료한 시간 (null=True → DB에 null 허용, 완료 전엔 비어있음)
-    created_at = models.DateTimeField(
-        auto_now_add=True
-    )  # 생성된 시간 (처음 저장될 때 자동으로 기록, 이후 변경 불가)
-    updated_at = models.DateTimeField(
-        auto_now=True
-    )  # 수정된 시간 (저장할 때마다 자동으로 현재 시간 갱신)
+
+    exclude = ["created_at", "updated_at"]
 
     def __str__(self):  # Django 관리자 페이지 등에서 이 객체를 이름으로 표시해줌
         return self.name  # 없으면 Todo object (1) 이런 식으로 보임
